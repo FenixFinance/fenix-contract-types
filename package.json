@@ -1,0 +1,26 @@
+{
+  "name": "fenix-contract-typings",
+  "version": "1.0.0",
+  "description": "Typings from Fenix Solidity contracts",
+  "main": "dist/index.js",
+  "author": "Ed Zynda",
+  "license": "MIT",
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "@ethersproject/abi": "^5.5.0",
+    "@ethersproject/bytes": "^5.5.0",
+    "@ethersproject/providers": "^5.5.1",
+    "ethers": "^5.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.7",
+    "copyfiles": "^2.4.1"
+  },
+  "scripts": {
+    "build": "yarn compile && yarn copy-dts",
+    "compile": "tsc -p ./tsconfig.json",
+    "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" dist"
+  }
+}
